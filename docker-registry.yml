@@ -13,7 +13,7 @@ services:
     volumes:
       - pool:/var/lib/registry
       - config:/etc/docker/registry
-      - etc/certs:/certs
+      - /etc/certs:/certs
       
   docker-registry-ui:
         image: parabuzzle/craneoperator:latest
