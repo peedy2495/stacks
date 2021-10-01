@@ -26,8 +26,8 @@ services:
         - REGISTRY_ALLOW_DELETE=true
         - ALLOW_REGISTRY_LOGIN=true
         - SSL_VERIFY=false
-        - USERNAME=user
-        - PASSWORD=MyPassword
+        - USERNAME=${USERNAME}
+        - PASSWORD=${PASSWORD}
         restart: always
         depends_on:
         - docker-registry
