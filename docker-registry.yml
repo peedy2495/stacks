@@ -7,13 +7,13 @@ services:
     ports:
       - 5000:5000
     environment:
-      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/wildcard.testing.space.crt
-      - REGISTRY_HTTP_TLS_KEY=/certs/wildcard.testing.space.key
+      - REGISTRY_HTTP_TLS_CERTIFICATE="${TLS_CERTIFICATE}"
+      - REGISTRY_HTTP_TLS_KEY="{TLS_KEY}"
       - REGISTRY_STORAGE_DELETE_ENABLED=true
     volumes:
       - pool:/var/lib/registry
       - config:/etc/docker/registry
-      - /home/bigdata/certs:/certs
+      - etc/certs:/certs
       
   docker-registry-ui:
         image: parabuzzle/craneoperator:latest
